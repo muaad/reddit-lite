@@ -5,10 +5,12 @@
     </div>
     <div class="card-body">
       <p class="card-text"><%= post.body %></p>
+    </div>
+    <div class="card-footer">
       <div class="btn-group justify-content-end ">
         <%= link_to "Read More", post, class: "btn btn-sm btn-outline-primary" %>
         <%= link_to "Edit", edit_post_path(post), class: "btn btn-sm btn-outline-primary" %>
-        <%= link_to "Delete", post, class: "btn btn-sm btn-outline-danger" %>
+        <%= link_to "Delete", post, class: "btn btn-sm btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
       </div>
     </div>
   </div>

@@ -1,17 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <%= turbo_frame_tag :post_form do %>
-  <%= render 'posts/form', post: Post.new %>
+  <%= link_to "Add A Post", new_post_path, class: 'btn btn-primary' %>
+  <br>
 <% end %>
-
-<br>
 
 <%= turbo_stream_from :posts %>
 
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= turbo_frame_tag :posts do %>
-      <%= render post %>
-    <% end %>
+    <%= render post %>
   <% end %>
 </div>

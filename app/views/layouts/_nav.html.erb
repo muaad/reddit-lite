@@ -7,7 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Posts</a>
+          <a class="nav-link btn btn-outline-success" aria-current="page" href="#">
+            Posts
+            <%= turbo_frame_tag 'posts-count', src: '/posts/count' do %> 
+              <div class="spinner-border spinner-border-sm" role="status">
+              </div>
+            <% end %>
+          </a>
         </li>
       </ul>
       <form class="d-flex" role="search">

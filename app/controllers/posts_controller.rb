@@ -58,6 +58,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def posts_count
+    sleep 2 # This is just to create a delay long enough for us to see the spinner loading
+    render partial: 'posts/posts_count'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
